@@ -1,0 +1,202 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+</head>
+<body>
+    <div style="background-color: bisque;">
+    <h4 style="display: inline-block;margin-left: 100px;">Item</h4>
+    <h4 style="display: inline-block;margin-left: 300px;">Description</h4>
+    <h4 style="display: inline-block;margin-left: 320px;">Quantity</h4>
+    <h4 style="display: inline-block;margin-left: 200px;">Price</h4>
+</div>
+    <%for(j=0;j<disp.length;j++){%>
+        <div>
+        <img  style="height: 200px;width: 200px;" src= "<%=disp[j].image%>" alt=<%=disp[j].image%>>
+        <h4 style="display: inline-block;position:relative;left: 200px;bottom:100px"><%=disp[j].Name%></h4>
+        <h4 style="display: inline-block;position:relative;left: 500px;bottom:100px"><%=disp[j].No_items%></h4>
+        <h4 style="display: inline-block;position:relative;left: 730px;bottom:100px"><%=disp[j].price%></h4>
+        
+        <%}%>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Craftizen</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abhaya+Libre:400,500&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Actor&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Satisfy&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&amp;display=swap">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/Art Page/art_style1.css">
+    <link rel="stylesheet" href="assets/css/Articles-Cards-images.css">
+    <link rel="stylesheet" href="assets/css/Google-Style-Login-.css">
+    <link rel="stylesheet" href="assets/css/style-1.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Basic-icons.css">
+    <link rel="stylesheet" href="assets/css/MUSA_carousel-product-cart-slider-carousel-product-cart-slider.css">
+    <link rel="stylesheet" href="assets/css/MUSA_carousel-product-cart-slider.css">
+    <link rel="stylesheet" href="assets/css/Sign-Up-Form---Gabriela-Carvalho.css">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* background-color: #bc0e0e; */
+            margin: 0;
+            padding: 0;
+            background-image: url("/public/assets/img/intro/Untitled Design (3).jpg");
+        }
+
+        .heading {
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* .container {
+            background-color: #fffffffe;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+        } */
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            border: 1px solid rgb(210, 210, 210);
+            border-radius: 7px;
+        }
+
+        .item-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .item-image {
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+            margin-right: 70px;
+            border-radius: 5px;
+        }
+
+        .item-details {
+            /* font-size: 15px; */
+            display: flex;
+            align-items: center;
+            flex: 1;
+            justify-content: space-between;
+            padding-right: 107px;
+        }
+
+        .heading-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .heading {
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            font-weight: 600;
+            color: #820505;
+        }
+
+        .heading1 {
+            padding-top: 35px;
+            font-size: 26px;
+            color: white;
+        }
+
+        .quantity-input {
+            width: 50px;
+            text-align: center;
+        }
+
+        .item-details h4 {
+            font-size: 17px;
+            font-weight: 600;
+        }
+        .delete-button{
+            width: 20px;
+            background-color:transparent;
+            color: black;
+            padding-right: 20px;
+        }
+    </style>
+   
+</head>
+
+<body style="background: url(&quot;assets/img/intro/Untitled%20Design%20(3).jpg&quot;); background-size: 150%; ">
+    <div class="main-container">
+        <div class="heading heading1">Cart Items</div>
+
+        <div class="container">
+            <div class="heading-row">
+                <div class="heading">Item</div>
+                <div class="heading">Description</div>
+                <div class="heading">Quantity</div>
+                <div class="heading">Price</div>
+                <div class="heading">Remove</div>
+            </div>
+
+            <% for (j = 0; j < disp.length; j++) { %>
+                <div class="item-row">
+                    <img class="item-image" src="<%= disp[j].image %>" alt="<%= disp[j].image %>" />
+                    <div class="item-details">
+                        <h4>
+                            <%= disp[j].Name %>
+                        </h4>
+                        <input id="quantity-<%= j %>" class="quantity-input" type="number" min="1" value="1" onchange="updatePrice(<%= j %>)" />
+                        <h4>
+                            <span id="price-<%= j %>" data-price="<%= disp[j].price %>">
+                                <%= disp[j].price %>
+                            </span>
+                        </h4>
+                    </div>
+                    <form method="post" action="/delete_cart" style="border:none; padding-right: 20px;">
+                    <button name="final" value="<%=disp[j].Name%>" class="delete-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                            <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+                        </svg>
+                    </button>
+                </form>
+                </div>
+            <% } %>
+        </div>
+    </div>
+
+    <script>
+        function updatePrice(index) {
+            const quantityInput = document.getElementById(`quantity-${index}`);
+            const priceElement = document.getElementById(`price-${index}`);
+            const price = parseFloat(priceElement.getAttribute("data-price"));
+            const quantity = parseInt(quantityInput.value);
+            const totalPrice = price * quantity;
+            priceElement.textContent = totalPrice.toFixed(2);
+        }
+        
+        
+    </script>
+</body>
+</html>

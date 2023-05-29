@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Craftizen</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abhaya+Libre:400,500&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Actor&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Satisfy&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&amp;display=swap">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/Art Page/art_style1.css">
+    <link rel="stylesheet" href="../assets/css/Articles-Cards-images.css">
+    <link rel="stylesheet" href="../assets/css/Google-Style-Login-.css">
+    <link rel="stylesheet" href="../assets/css/style-1.css">
+    <link rel="stylesheet" href="../assets/css/Login-Form-Basic-icons.css">
+    <link rel="stylesheet" href="../assets/css/MUSA_carousel-product-cart-slider-carousel-product-cart-slider.css">
+    <link rel="stylesheet" href="../assets/css/MUSA_carousel-product-cart-slider.css">
+    <link rel="stylesheet" href="../assets/css/Sign-Up-Form---Gabriela-Carvalho.css">
+    <style>
+        button, .gc-signupbtn{
+            background-color: transparent;
+        }
+        .chatbot-icon {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #bc0e0e;
+      color: #000;
+      border-radius: 50%;
+      padding: 10px;
+      cursor: pointer;
+      width: 47px;
+      height: 48px;
+    }
+
+    .chatbot-window {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      height: 400px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+      border: 1px solid #e2a4a4;
+      display: none;
+      border-radius: 2%;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: normal;
+      z-index: 9999;
+    }
+
+    .chatbot-content {
+      height:275px;
+      padding: 0 10px;
+      position: relative;
+      overflow-y: auto;
+    }
+
+    .chatbot-close-btn {
+      /* position: absolute; */
+     padding-top: 1px;
+      padding-bottom: 2px;
+      display: flex;
+      justify-content: space-between;
+
+    }
+
+    .chatbot-close-btn .heading{
+      color: #bc0e0e;
+      font-weight: bold;
+      font-size: 18px;
+      padding-left: 57px;
+      padding-top: 9px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+    }
+
+    .chatbot-close-btn button {
+      background-color: transparent;
+      border: none;
+      font-size: 14px;
+      cursor: pointer;
+      padding-top: 3px;
+      padding-right: 39px;
+      width: 30px;
+      height: 30px;
+    }
+
+    .chatbot-input-section {
+      position: absolute;
+      bottom: 7px;
+      right: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 2px 10px;
+      /* background-color: #f1f1f1; */
+    }
+
+    .chatbot-input-section input[type="text"] {
+      /* margin-right: 10px; */
+      padding: 6px;
+      width: 230px;
+      font-size: 15px;
+      /* border-color:transparent; */
+      border: 1px solid #a7a6a6;
+      border-radius: 4px 0 0 4px;
+      margin-bottom: 2px;
+      background-color: transparent;
+    }
+
+    .chatbot-input-section button {
+        width: 34px;
+        height: 36px;
+      padding: 3px 0;
+      background-color: #fff;
+      border: 1px solid #a7a6a6;
+      border-radius: 0 4px 4px 0;
+      margin-bottom: 5px;
+      margin-top: 7px;
+    }
+
+    #nameInput:focus {
+      outline: none;
+    }
+
+    .userText,
+    .botText {
+      margin: 5px 0;
+      padding-bottom: 10px;
+    }
+
+    .userText span {
+      background-color: #cce6f8;
+      padding: 5px 10px;
+      border-radius: 13px;
+      display: inline-block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: normal;
+      gap: 2px;
+      font-size: 14px;
+    }
+
+    .botText span {
+      background-color: #e17777;
+      padding: 5px 10px;
+      border-radius: 13px;
+      display: inline-block;
+      text-align: right;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: normal;
+      font-size: 14px;
+    }
+    </style>
+</head>
+
+<body style="height: 654px;">
+    <div>
+        <div class="container1">
+            <nav class="bg-light navbar navbar-expand-md">
+                <div class="container-fluid" style="text-align: center;display: flex;margin-right: 0px;"><a class="navbar-brand d-flex flex-row justify-content-center align-items-center align-content-center align-self-center" href="#" style="margin-left: 21px;"><img src="../assets/img/intro/logo.png" alt="logo" width="45" height="41" style="width: 45px;height: 40px;margin-right: 6px;margin-bottom: 6px;">
+                        <h4 style="font-family: Satisfy, serif;color: rgb(188,14,14);">Craftizen</h4>
+                    </a>
+                    <div class="search-and-icons" style="width: 495.3px;display: flex;">
+                        <form role="search"
+                            style="text-align: center;transform: perspective(0px);opacity: 1;filter: blur(0px);padding-right: 0px;margin-right: 20px;border-width: 0px;border-color: var(--bs-navbar-disabled-color); display: flex;">
+                            <input class="border rounded form-control me-2" type="search"
+                                placeholder="Search Items " aria-label="Search"
+                                style="width: 390.3px;box-shadow: 0px 0px;">
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg"
+                                width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-cart2"
+                                style="font-size: 24px;padding: 3px;margin: 4px;margin-left: 12px;"> -->
+                                <!-- <path onclick="f1()" href="/addtocart" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path> -->
+
+                            </svg><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                viewBox="0 0 16 16" class="bi bi-person"
+                                style="font-size: 34px;width: 23px;padding-left: 2px;padding-right: 3px;margin-left: 9px;">
+                                <path
+                                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z">
+                                </path>
+                            </svg></form>
+                            <form style="border: none;" method="post" action="/addtocart">
+                                <button style="position: relative;right: 10px;border-radius: 20px; bottom: 3px; padding: 3px 8px;" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"  class="bi bi-cart" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                  </svg></button>
+                            </form>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="container2" style="margin-top: -9px;">
+            <div class="header" style="background: #bc0e0e;margin-top: -4px;padding-top: 16px;padding-bottom: 14px;">
+                <div class="dropdown" style="font-size: 18px;font-family: Actor, sans-serif;">
+                    <div class="link" data-dropdown-button="" style="font-size: 18px;font-family: Actor, sans-serif;"><a href="/home" style="text-decoration: none;color: rgb(255,255,255);">Home</a></div>
+                </div>
+                <div class="dropdown">
+                    <div class="link" data-dropdown-button=""><a class="artpage1" href="/arts" style="color: rgba(13,110,253,0);"><span class="text-white" style="font-family: Actor, sans-serif;font-size: 18px;"> Arts</span></a></div>
+                    <div class="dropdown-menu information-grid" style="font-size: 18px;font-family: Actor, sans-serif;">
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-heading" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Painting</span></div>
+                            <div class="dropdown-links" style="font-size: 18px;font-family: Actor, sans-serif;"><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Oil Painting</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Water Painting</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Acrylic Painiting</a></div>
+                        </div>
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-heading" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Miniatures</span></div>
+                            <div class="dropdown-links" style="font-size: 18px;font-family: Actor, sans-serif;"><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Painting</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Embroidery</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Ceramics</a></div>
+                        </div>
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-heading" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Sculpture</span></div>
+                            <div class="dropdown-links" style="font-size: 18px;font-family: Actor, sans-serif;"><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Stone</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Wooden</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Clay</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Metal</a></div>
+                        </div>
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-heading" style="padding-bottom: 5px;font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Drawing &amp; Illustration</span></div>
+                            <div class="dropdown-heading" style="padding-bottom: 5px;font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Glass Art</span></div>
+                            <div class="dropdown-heading" style="padding-bottom: 5px;font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Photography</span></div><a href="#" class="link set3" style="font-size: 18px;font-family: Actor, sans-serif;">Explore all<i class="bi bi-arrow-right" style="font-size: 18px;font-family: Actor, sans-serif;"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown" style="font-size: 18px;font-family: Actor, sans-serif;">
+                    <div class="link" data-dropdown-button="" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Toys</span></div>
+                    <div class="dropdown-menu information-grid" style="font-size: 18px;font-family: Actor, sans-serif;">
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-links" style="font-size: 18px;font-family: Actor, sans-serif;"><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Stuffed Animals</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Wooden Toys</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Knitted Toys</a></div>
+                        </div>
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-links" style="font-size: 18px;font-family: Actor, sans-serif;"><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Clay Toys</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Sewn Toys</a><a href="#" class="link set3" style="font-size: 18px;font-family: Actor, sans-serif;">Explore all<i class="bi bi-arrow-right" style="font-size: 18px;font-family: Actor, sans-serif;"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown" style="font-size: 18px;font-family: Actor, sans-serif;">
+                    <div class="link" data-dropdown-button="" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Clothing</span></div>
+                    <div class="dropdown-menu information-grid" style="font-size: 18px;font-family: Actor, sans-serif;">
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-heading" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Handloom</span></div>
+                            <div class="dropdown-links" style="font-size: 18px;font-family: Actor, sans-serif;"><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Banarasi</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Kanchipuram</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Pochampally</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Ikat</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Jamdani</a></div>
+                        </div>
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-heading" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Collections</span></div>
+                            <div class="dropdown-links" style="font-size: 18px;font-family: Actor, sans-serif;"><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Kurta</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Lehanga</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Casual Wear</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Anarkali</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Saree</a></div>
+                        </div>
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-heading" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Collections</span></div>
+                            <div class="dropdown-links" style="font-size: 18px;font-family: Actor, sans-serif;"><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">newsa</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Newsletter</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Discord</a></div>
+                        </div>
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-heading" style="padding-bottom: 5px;font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Embroidered</span></div>
+                            <div class="dropdown-heading" style="padding-bottom: 5px;font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Knitted</span></div>
+                            <div class="dropdown-heading" style="padding-bottom: 5px;font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Quilted</span></div><a href="#" class="link set3" style="font-size: 18px;font-family: Actor, sans-serif;">Explore all<i class="bi bi-arrow-right" style="font-size: 18px;font-family: Actor, sans-serif;"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown" style="font-size: 18px;font-family: Actor, sans-serif;">
+                    <div class="link" data-dropdown-button="" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Jewelry</span></div>
+                    <div class="dropdown-menu information-grid" style="font-size: 18px;font-family: Actor, sans-serif;">
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-heading" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Free Tutorials</span></div>
+                            <div class="dropdown-links" style="font-size: 18px;font-family: Actor, sans-serif;"><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">All</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Latest</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Popular</a></div>
+                        </div>
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-heading" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Courses</span></div>
+                            <div class="dropdown-links" style="font-size: 18px;font-family: Actor, sans-serif;"><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">JavaScript</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">CSS</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">React</a></div>
+                        </div>
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-heading" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Blog</span></div>
+                            <div class="dropdown-links" style="font-size: 18px;font-family: Actor, sans-serif;"><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">All</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Latest</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Popular</a></div>
+                        </div>
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-heading" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Other</span></div>
+                            <div class="dropdown-links" style="font-size: 18px;font-family: Actor, sans-serif;"><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Twitter</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Newsletter</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Discord</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown" style="font-size: 18px;font-family: Actor, sans-serif;">
+                    <div class="link" data-dropdown-button="" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Pottery</span></div>
+                    <div class="dropdown-menu information-grid" style="font-size: 18px;font-family: Actor, sans-serif;">
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-heading" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Free Tutorials</span></div>
+                            <div class="dropdown-links" style="font-size: 18px;font-family: Actor, sans-serif;"><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">All</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Latest</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Popular</a></div>
+                        </div>
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-heading" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Courses</span></div>
+                            <div class="dropdown-links" style="font-size: 18px;font-family: Actor, sans-serif;"><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">JavaScript</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">CSS</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">React</a></div>
+                        </div>
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-heading" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Blog</span></div>
+                            <div class="dropdown-links" style="font-size: 18px;font-family: Actor, sans-serif;"><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">All</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Latest</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Popular</a></div>
+                        </div>
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-heading" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Other</span></div>
+                            <div class="dropdown-links" style="font-size: 18px;font-family: Actor, sans-serif;"><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Twitter</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Newsletter</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Discord</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown" style="font-size: 18px;font-family: Actor, sans-serif;">
+                    <div class="link" data-dropdown-button="" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Home Decoration</span></div>
+                    <div class="dropdown-menu information-grid" style="font-size: 18px;font-family: Actor, sans-serif;">
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-heading" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Free Tutorials</span></div>
+                            <div class="dropdown-links" style="font-size: 18px;font-family: Actor, sans-serif;"><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">All</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Latest</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Popular</a></div>
+                        </div>
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-heading" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Courses</span></div>
+                            <div class="dropdown-links" style="font-size: 18px;font-family: Actor, sans-serif;"><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">JavaScript</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">CSS</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">React</a></div>
+                        </div>
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-heading" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Blog</span></div>
+                            <div class="dropdown-links" style="font-size: 18px;font-family: Actor, sans-serif;"><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">All</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Latest</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Popular</a></div>
+                        </div>
+                        <div style="font-size: 18px;font-family: Actor, sans-serif;">
+                            <div class="dropdown-heading" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Other</span></div>
+                            <div class="dropdown-links" style="font-size: 18px;font-family: Actor, sans-serif;"><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Twitter</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Newsletter</a><a href="#" class="link1" style="font-size: 18px;font-family: Actor, sans-serif;">Discord</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <div class="link" data-dropdown-button="" style="font-size: 18px;font-family: Actor, sans-serif;"><span style="font-size: 18px;font-family: Actor, sans-serif;">Wooden Work</span></div>
+                    <div class="dropdown-menu information-grid">
+                        <div>
+                            <div class="dropdown-heading"><span>Free Tutorials</span></div>
+                            <div class="dropdown-links"><a href="#" class="link1">All</a><a href="#" class="link1">Latest</a><a href="#" class="link1">Popular</a></div>
+                        </div>
+                        <div>
+                            <div class="dropdown-heading"><span>Courses</span></div>
+                            <div class="dropdown-links"><a href="#" class="link1">JavaScript</a><a href="#" class="link1">CSS</a><a href="#" class="link1">React</a></div>
+                        </div>
+                        <div>
+                            <div class="dropdown-heading"><span>Blog</span></div>
+                            <div class="dropdown-links"><a href="#" class="link1">All</a><a href="#" class="link1">Latest</a><a href="#" class="link1">Popular</a></div>
+                        </div>
+                        <div>
+                            <div class="dropdown-heading"><span>Other</span></div>
+                            <div class="dropdown-links"><a href="#" class="link1">Twitter</a><a href="#" class="link1">Newsletter</a><a href="#" class="link1">Discord</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="margin-left: 65px;margin-right: 65px;margin-top: 24px;">
+        <div class="flex-row">
+            <div class="d-flex flex-row justify-content-between align-items-center align-content-center" style="padding-right: 0px;margin-right: 66px;">
+                <h4 style="font-size: 26px;"><span style="color: rgb(188, 14, 14);">|</span> <em>Aesthetics</em></h4><span style="font-family: 'Playfair Display', serif;font-size: 12px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 22px;margin-right: 30px;">
+                        <path d="M14 5L21 12M21 12L14 19M21 12L3 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></span>
+            </div>
+            <div class="d-flex flex-row flex-fill justify-content-start align-items-start" style="margin-top: 27px;margin-left: -1px;" data-bs-spy="scroll">
+                <div style="width: 464px;height: 360.7px;">
+                    <div class="card" style="height: 348.7px;width: 440px;"><img class="card-img-top w-100 d-block fit-cover" style="height: 304px;width: 206px;" src="../assets/img/home/Screenshot%202023-04-17%20214828.jpg" width="234" height="175">
+                        <div class="card-body p-4" style="height: 121.7px;">
+                            <h5 class="card-title" style="font-size: 17px;width: 207px;font-family: Rubik, sans-serif;margin-left: -13px;padding-top: 0px;margin-bottom: 9px;margin-top: -17px;">Soaps</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-row flex-wrap">
+                    <div class="card" style="height: 169.7px;width: 197px;margin-left: 11px;margin-right: 18px;margin-bottom: 7px;"><img class="card-img-top w-100 d-block fit-cover" style="height: 132px;width: 186px;" src="../assets/img/home/Screenshot%202023-04-17%20215141.jpg" width="234" height="175">
+                        <div class="card-body p-4" style="height: 132.7px;">
+                            <h5 class="card-title" style="font-size: 17px;width: 207px;font-family: Rubik, sans-serif;margin-left: -13px;padding-top: 0px;margin-bottom: 9px;margin-top: -17px;">Pottery</h5>
+                        </div>
+                    </div>
+                    <div class="card" style="height: 169.7px;width: 197px;margin-left: 11px;margin-right: 18px;margin-bottom: 7px;"><img class="card-img-top w-100 d-block fit-cover" style="height: 132px;width: 186px;" src="../assets/img/home/Screenshot%202023-04-17%20215536.jpg" width="195" height="132">
+                        <div class="card-body p-4" style="height: 132.7px;">
+                            <h5 class="card-title" style="font-size: 17px;width: 207px;font-family: Rubik, sans-serif;margin-left: -13px;padding-top: 0px;margin-bottom: 9px;margin-top: -17px;">Jewellery</h5>
+                        </div>
+                    </div>
+                    <div class="card" style="height: 169.7px;width: 197px;margin-left: 11px;margin-right: 18px;margin-bottom: 7px;"><img class="card-img-top w-100 d-block fit-cover" style="height: 132px;width: 186px;" src="../assets/img/home/Screenshot%202023-04-17%20220018.jpg" width="234" height="175">
+                        <div class="card-body p-4" style="height: 132.7px;">
+                            <h5 class="card-title" style="font-size: 17px;width: 207px;font-family: Rubik, sans-serif;margin-left: -13px;padding-top: 0px;margin-bottom: 9px;margin-top: -17px;">Saree Painting</h5>
+                        </div>
+                    </div>
+                    <div class="card" style="height: 169.7px;width: 197px;margin-left: 11px;margin-right: 18px;margin-bottom: 7px;"><img class="card-img-top w-100 d-block fit-cover" style="height: 132px;width: 186px;" src="../assets/img/home/Screenshot%202023-04-17%20225452.png" width="234" height="175">
+                        <div class="card-body p-4" style="height: 132.7px;">
+                            <h5 class="card-title" style="font-size: 17px;width: 207px;font-family: Rubik, sans-serif;margin-left: -13px;padding-top: 0px;margin-bottom: 9px;margin-top: -17px;">Wallets</h5>
+                        </div>
+                    </div>
+                    <div class="card" style="height: 169.7px;width: 197px;margin-left: 11px;margin-right: 18px;margin-bottom: 7px;"><img class="card-img-top w-100 d-block fit-cover" style="height: 132px;width: 186px;" src="../assets/img/home/Screenshot%202023-04-17%20225714.jpg" width="234" height="175">
+                        <div class="card-body p-4" style="height: 132.7px;">
+                            <h5 class="card-title" style="font-size: 17px;width: 207px;font-family: Rubik, sans-serif;margin-left: -13px;padding-top: 0px;margin-bottom: 9px;margin-top: -17px;">Scarves</h5>
+                        </div>
+                    </div>
+                    <div class="card" style="height: 169.7px;width: 197px;margin-left: 11px;margin-right: 18px;margin-bottom: 7px;"><img class="card-img-top w-100 d-block fit-cover" style="height: 132px;width: 186px;" src="../assets/img/home/Screenshot%202023-04-17%20225938.jpg" width="234" height="175">
+                        <div class="card-body p-4" style="height: 132.7px;">
+                            <h5 class="card-title" style="font-size: 17px;width: 207px;font-family: Rubik, sans-serif;margin-left: -13px;padding-top: 0px;margin-bottom: 9px;margin-top: -17px;">Woodworks</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-row" style="margin-top: 35px;">
+            <div class="d-flex flex-row justify-content-between align-items-center align-content-center" style="padding-right: 0px;margin-right: 66px;">
+                <h4><span style="color: rgb(188, 14, 14);">|</span> <em>Handmade Products For Children</em></h4><span style="font-family: 'Source Sans Pro', sans-serif;font-size: 14px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 22px;margin-right: 30px;">
+                        <path d="M14 5L21 12M21 12L14 19M21 12L3 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg></span>
+            </div>
+            <div class="d-flex flex-row flex-fill justify-content-start align-items-start" style="margin-top: 27px;margin-left: -1px;" data-bs-spy="scroll">
+                <div style="width: 464px;height: 360.7px;">
+                    <div class="card" style="height: 348.7px;width: 440px;"><img class="card-img-top w-100 d-block fit-cover" style="height: 304px;width: 206px;" src="../assets/img/home/Screenshot%202023-04-17%20230834.jpg" width="234" height="175">
+                        <div class="card-body p-4" style="height: 121.7px;">
+                            <h5 class="card-title" style="font-size: 17px;width: 207px;font-family: Rubik, sans-serif;margin-left: -13px;padding-top: 0px;margin-bottom: 9px;margin-top: -17px;">Knitted Toys</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-row flex-wrap">
+                    <div class="card" style="height: 169.7px;width: 197px;margin-left: 11px;margin-right: 18px;margin-bottom: 7px;"><img class="card-img-top w-100 d-block fit-cover" style="height: 132px;width: 186px;" src="../assets/img/home/Screenshot%202023-04-17%20231030.png" width="234" height="175">
+                        <div class="card-body p-4" style="height: 132.7px;">
+                            <h5 class="card-title" style="font-size: 17px;width: 207px;font-family: Rubik, sans-serif;margin-left: -13px;padding-top: 0px;margin-bottom: 9px;margin-top: -17px;">Wooden toys</h5>
+                        </div>
+                    </div>
+                    <div class="card" style="height: 169.7px;width: 197px;margin-left: 11px;margin-right: 18px;margin-bottom: 7px;"><img class="card-img-top w-100 d-block fit-cover" style="height: 132px;width: 186px;" src="../assets/img/home/Screenshot%202023-04-18%20080840.png" width="195" height="132">
+                        <div class="card-body p-4" style="height: 132.7px;">
+                            <h5 class="card-title" style="font-size: 17px;width: 207px;font-family: Rubik, sans-serif;margin-left: -13px;padding-top: 0px;margin-bottom: 9px;margin-top: -17px;">Books</h5>
+                        </div>
+                    </div>
+                    <div class="card" style="height: 169.7px;width: 197px;margin-left: 11px;margin-right: 18px;margin-bottom: 7px;"><img class="card-img-top w-100 d-block fit-cover" style="height: 132px;width: 186px;" src="../assets/img/home/Screenshot%202023-04-18%20083150.jpg" width="234" height="175">
+                        <div class="card-body p-4" style="height: 132.7px;">
+                            <h5 class="card-title" style="font-size: 17px;width: 207px;font-family: Rubik, sans-serif;margin-left: -13px;padding-top: 0px;margin-bottom: 9px;margin-top: -17px;">Play tents</h5>
+                        </div>
+                    </div>
+                    <div class="card" style="height: 169.7px;width: 197px;margin-left: 11px;margin-right: 18px;margin-bottom: 7px;"><img class="card-img-top w-100 d-block fit-cover" style="height: 132px;width: 186px;" src="../assets/img/home/Screenshot%202023-04-18%20095213.jpg" width="234" height="175">
+                        <div class="card-body p-4" style="height: 132.7px;">
+                            <h5 class="card-title" style="font-size: 17px;width: 207px;font-family: Rubik, sans-serif;margin-left: -13px;padding-top: 0px;margin-bottom: 9px;margin-top: -17px;">Clothing</h5>
+                        </div>
+                    </div>
+                    <div class="card" style="height: 169.7px;width: 197px;margin-left: 11px;margin-right: 18px;margin-bottom: 7px;"><img class="card-img-top w-100 d-block fit-cover" style="height: 132px;width: 186px;" src="../assets/img/home/Screenshot%202023-04-18%20095958.png" width="234" height="175">
+                        <div class="card-body p-4" style="height: 132.7px;">
+                            <h5 class="card-title" style="font-size: 17px;width: 207px;font-family: Rubik, sans-serif;margin-left: -13px;padding-top: 0px;margin-bottom: 9px;margin-top: -17px;">Soaps &amp; Bath Bombs</h5>
+                        </div>
+                    </div>
+                    <div class="card" style="height: 169.7px;width: 197px;margin-left: 11px;margin-right: 18px;margin-bottom: 7px;"><img class="card-img-top w-100 d-block fit-cover" style="height: 132px;width: 186px;" src="../assets/img/home/Screenshot%202023-04-18%20101006.png" width="234" height="175">
+                        <div class="card-body p-4" style="height: 132.7px;">
+                            <h5 class="card-title" style="font-size: 17px;width: 207px;font-family: Rubik, sans-serif;margin-left: -13px;padding-top: 0px;margin-bottom: 9px;margin-top: -17px;">Bags</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="chatbot-icon" onclick="toggleChatbotWindow()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" class="bi bi-chat-text"
+          viewBox="0 0 16 16">
+          <path
+            d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z" />
+          <path
+            d="M4 5.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zM4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8zm0 2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5z" />
+        </svg>
+      </div>
+    
+      <!-- Chatbot Window -->
+      <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-close-btn">
+          <div class="heading">Cratizen Chatbot</div>
+          <button onclick="toggleChatbotWindow()" id="closeButton"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" class="bi bi-x" viewBox="0 0 16 16">
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+          </svg></button>
+        </div>
+          <div class="chatbot-content">
+            <div id="chatbox" class="chatbox"></div>
+          </div>
+          <div class="chatbot-input-section">
+            <input id="nameInput" type="text" name="msg" placeholder="Ask your Query..." />
+            <button onclick="getBotResponse()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="grey" class="bi bi-send"
+                viewBox="0 0 16 16">
+                <path
+                  d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z" />
+              </svg>
+            </button>
+          
+        </div>
+      </div> 
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bs-init.js"></script>
+    <script src="../assets/js/home.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    var chatbotWindow = document.getElementById("chatbotWindow");
+    var isChatbotOpen = false;
+
+    function toggleChatbotWindow() {
+      if (!isChatbotOpen) {
+        chatbotWindow.style.display = "block";
+        isChatbotOpen = true;
+      } else {
+        chatbotWindow.style.display = "none";
+        isChatbotOpen = false;
+      }
+    }
+
+    function getBotResponse() {
+      var rawText = $("#nameInput").val();
+      var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
+      // var botHtml = '<p class="botText"><span>Bot response</span></p>';
+
+      $.ajax({
+        type: "POST",
+        url: "/chatbot",
+        data: { msg: rawText },
+        success: function (response) {
+          var botHtml =
+            '<p class="botText"><span>' + response + "</span></p>";
+          $("#chatbox").append(botHtml);
+          // document.getElementById("userInput").scrollIntoView({ block: "start", behavior: "smooth" });
+        },
+        error: function (xhr, status, error) {
+          console.log(error); // Log any errors to the console for debugging
+        },
+      });
+
+      $("#nameInput").val(""); // Clear the input field after sending the message
+      $("#chatbox").append(userHtml); // Append user message to the chatbox
+      $("#chatbox").append(botHtml); // Append bot response to
+
+      // Scroll to the bottom of the chatbox
+      var chatbox = document.getElementById("chatbox");
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+
+    $("#nameInput").keypress(function (e) {
+      if (e.which == 13) {
+        getBotResponse();
+      }
+    });
+  </script>
+</body>
+
+</html>

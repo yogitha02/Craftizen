@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craftizen</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abhaya+Libre:400,500&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Actor&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Satisfy&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&amp;display=swap">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/Art Page/art_style1.css">
+    <link rel="stylesheet" href="assets/css/Articles-Cards-images.css">
+    <link rel="stylesheet" href="assets/css/Google-Style-Login-.css">
+    <link rel="stylesheet" href="assets/css/style-1.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Basic-icons.css">
+    <link rel="stylesheet" href="assets/css/MUSA_carousel-product-cart-slider-carousel-product-cart-slider.css">
+    <link rel="stylesheet" href="assets/css/MUSA_carousel-product-cart-slider.css">
+    <link rel="stylesheet" href="assets/css/Sign-Up-Form---Gabriela-Carvalho.css">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <style>
+        
+
+      body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            /* background: url(/public/assets/img/intro/Untitled\ Design\ \(3\).jpg); */
+            background-color: #bc0e0e;
+            background-image: url("/public/assets/img/intro/Untitled Design (3).jpg");
+            
+        }
+        .payment-container {
+            width: 500px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+
+        h3{
+            text-align: center;
+            color: #bc0e0e;
+            padding-bottom: 20px;
+            font-weight: 600;
+        }
+        #paymentOptions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .paymentOption {
+            display: flex;
+            align-items: center;
+        }
+
+        .paymentOption label {
+            margin-left: 10px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        #creditCardForm {
+            margin-top: 20px;
+        }
+
+        #creditCardForm label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        #creditCardForm input[type="text"] {
+            width: 90%;
+            height: 30px;
+            margin-bottom: 10px;
+            padding: 5px;
+            font-size: 14px;
+        }
+
+        #proceedButton {
+            background-color:rgb(11, 90, 11);
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        #proceedButton:disabled {
+            background-color: lightgray;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body style="background: url(&quot;assets/img/intro/Untitled%20Design%20(3).jpg&quot;); background-size: 150%; ">
+    <div class="payment-container">
+        <h3>Payment Options</h3>
+        <div id="paymentOptions">
+            <div class="paymentOption">
+                <input type="radio" name="paymentMethod" id="creditCard" value="creditCard" onclick="toggleCreditCardForm(true)">
+                <label for="creditCard">Pay with Credit Card</label>
+            </div>
+            <div id="creditCardForm">
+              <label for="cardNumber">Card Number:</label>
+              <input type="text" id="cardNumber" oninput="formatCardNumber()" pattern="\d{16}"
+                  title="Please enter 16-digit numbers only" required>
+              <label for="expirationDate">Expiration Date (MM/YY):</label>
+              <input type="text" id="expirationDate" oninput="formatExpirationDate()" pattern="\d{2}\/\d{2}" title="Please enter a valid expiration date (MM/YY)" required>
+              <label for="cvv">CVV:</label>
+              <input type="text" id="cvv" oninput="formatCVV()" pattern="\d{3}" title="Please enter a 3-digit CVV number" required>
+          </div>
+            <div class="paymentOption">
+                <input type="radio" name="paymentMethod" id="payOnDelivery" value="payOnDelivery" onclick="toggleCreditCardForm(false)">
+                <label for="payOnDelivery">Pay on Delivery</label>
+            </div>
+        </div>
+        <button type="submit" onclick="proceedToOrder()" id="proceedButton" disabled>Proceed to Order</button>
+    </div>
+      <script>
+        function formatExpirationDate() {
+      var expirationDateInput = document.getElementById("expirationDate");
+      expirationDateInput.value = expirationDateInput.value.replace(/\D/g, "").substring(0, 4);
+      var formattedValue = expirationDateInput.value.replace(/\D/g, "").substring(0, 4);
+      var parts = [];
+      for (var i = 0; i < formattedValue.length; i += 2) {
+        parts.push(formattedValue.substring(i, i + 2));
+      }
+      expirationDateInput.value = parts.join("/");
+    }
+        function formatCVV() {
+      var cvvInput = document.getElementById("cvv");
+      cvvInput.value = cvvInput.value.replace(/\D/g, "").substring(0, 3);
+    }
+        function formatCardNumber() {
+      var cardNumberInput = document.getElementById("cardNumber");
+      var formattedValue = cardNumberInput.value.replace(/\s/g, "").replace(/\D/g, "").substring(0, 16);
+      var parts = [];
+      for (var i = 0; i < formattedValue.length; i += 4) {
+        parts.push(formattedValue.substring(i, i + 4));
+      }
+      cardNumberInput.value = parts.join(" ");
+    }
+    function toggleCreditCardForm(show) {
+  var creditCardForm = document.getElementById("creditCardForm");
+  var inputs = creditCardForm.getElementsByTagName("input");
+
+  for (var i = 0; i < inputs.length; i++) {
+    inputs[i].disabled = !show;
+  }
+
+  // Clear credit card details when toggling the form
+  if (!show) {
+    document.getElementById("cardNumber").value = "";
+    document.getElementById("expirationDate").value = "";
+    document.getElementById("cvv").value = "";
+  }
+
+  // Enable the Proceed to Order button if any checkbox is checked
+  var proceedButton = document.getElementById("proceedButton");
+  var checkboxes = document.querySelectorAll('input[name="paymentMethod"]:checked');
+  if (checkboxes.length > 0) {
+    proceedButton.disabled = false;
+  } else {
+    proceedButton.disabled = true;
+  }
+}
+
+
+
+
+
+  function proceedToOrder() {
+      var paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+
+      if (paymentMethod === "creditCard") {
+          var cardNumber = document.getElementById("cardNumber").value;
+          var expirationDate = document.getElementById("expirationDate").value;
+          var cvv = document.getElementById("cvv").value;
+
+          if (cardNumber && expirationDate && cvv) {
+              // Logic for processing credit card payment
+              window.location.href = "/place-order";
+
+              // Redirect or show payment success message
+          } else {
+              alert("Please fill in all credit card details.");
+          }
+      } else if (paymentMethod === "payOnDelivery") {
+          // Redirect to the order placed page
+          window.location.href = "/place-order";
+      }
+  }
+  </script>
+</body>
+
+</html>

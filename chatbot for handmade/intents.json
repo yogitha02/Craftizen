@@ -1,0 +1,81 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hey", "Hello", "Good day", "Greetings", "Hi there"],
+      "responses": ["Hello! Welcome to our handmade store. How can I assist you today?", "Hi there! How may I help you with our handmade products?", "Hello! How can I make your handmade shopping experience delightful today?"],
+      "context_set": ""
+    },
+    {
+      "tag": "product_inquiry",
+      "patterns": ["Tell me about your products", " What kind of products do you sell?", "Can you give me an overview of your handmade items?"],
+      "responses": ["We offer a wide range of handmade products including jewelry, home decor, accessories,pottery, handbags, clothes and more.Each item is crafted with love and attention to detail"],
+      "context_set": ""
+    },
+    {
+      "tag": "pricing",
+      "patterns": ["How much does products cost?", "What's the pricing of products?", "Can you give me the pricing details for the products?","I'd like to know the prices of product available here"],
+      "responses": ["The price of products varies according to type of product and raw materials used . Please Explore the Products Listed in the Website. We also offer discounts time to time."],
+      "context_set": ""
+    },
+    {
+      "tag": "product_details",
+      "patterns": [
+        "I'm looking to buy products for Diwali, can you provide some recommendations?",
+        "I want to purchase items for the upcoming festival, where can I find them?",
+        "Can you suggest some popular products for this Diwali?",
+        "What products are available for purchase during Diwali?",
+        "Tell me about the items I can buy for this Diwali."
+      ],
+      "responses": [
+        "On our website's homepage, you'll find a dedicated section for Diwali recommendations. We have carefully curated a collection of products that are perfect for the festival. Take a look and explore the wide range of options available.",
+        "You'll be delighted to find a variety of products for Diwali in the Recommendations section on our homepage. Whether you're looking for traditional attire, festive decor, or unique gifts, we've got you covered. Start your Diwali shopping with us!",
+        "We have an extensive collection of products specifically tailored for Diwali. From elegant diyas to stylish ethnic wear, our offerings are designed to enhance your festive celebrations. Discover the perfect products for this Diwali on our website.",
+        "During Diwali, we offer a diverse range of products that capture the spirit of the festival. From intricately designed puja items to exquisite home decor, our selection is sure to impress. Explore our website to find the perfect items for your Diwali shopping.",
+        "This Diwali, immerse yourself in a world of delightful products available on our website. Whether you're seeking traditional or contemporary items, our collection features a wide array of choices. Experience the joy of shopping for Diwali with us."
+      ],
+      "context_set": ""
+    },
+    {
+      "tag": "customization",
+      "patterns": ["Can I request a custom order?", "Do you offer customization?", "Can I personalize products i like ?", "Is it possible to customize products ?"],
+      "responses": ["Absolutely! We love creating personalized items. Please let us know your specific requirements, and we'll be happy to discuss the customization options for product."],
+      "context_set": ""
+    },
+    
+    {
+      "tag": "promotion",
+      "patterns": ["Are there any ongoing promotions?", "Do you offer discounts?", "Are there any coupon codes available?", "Tell me about your current offers"],
+      "responses": ["Yes, we frequently run promotions and offer discounts on selected products. You can check our website or follow us on social media to stay updated on our latest offers."],
+      "context_set": ""
+      },
+    {
+      "tag": "order_status",
+      "patterns": ["How can I track my order?", "Where can I check my order status?", "I haven't received my order yet", "Can you provide an update on my order?"],
+      "responses": ["To track your order, you can visit the 'Order Status' section on our website and enter your order details. If you have any concerns regarding your order, please reach out to our customer support team, and they will assist you promptly."],
+      "context_set": ""
+    },
+    {
+      "tag": "payment_methods",
+      "patterns": ["What payment methods do you accept?", "Can I pay with UPI?", "Tell me about your accepted payment options"],
+      "responses": ["We accept various payment methods, including credit cards and Pay on Delivery. You can choose your preferred payment option during the checkout process on our website."],
+      "context_set": ""
+      },
+    
+   
+    {
+      "tag": "returns",
+      "patterns": ["What is your return policy?", "How can I return a product?","Can I get a refund if I'm not satisfied with my purchase?", "Tell me about your product return process"],
+      "responses": ["We have a customer-friendly return policy. If you're not satisfied with your purchase, you can initiate a return within 7 days of receiving the product.Visit Return on Profile page to get details"],
+      "context_set": ""
+      },
+      
+     
+      {
+      "tag": "goodbye",
+      "patterns": ["I have to go now", "I need to sign off", "Thank you for your assistance", "Goodbye","Ok Thanks","bye"],
+      "responses": ["You're welcome! If you have any more questions in the future, feel free to ask. Have a wonderful day! Goodbye!", "Thank you for visiting our handmade store. If you need any further assistance, don't hesitate to reach out. Goodbye and have a fantastic day!", "Goodbye! We appreciate your interest in our handmade products. If you have any more queries, we're here to help. Take care and goodbye!"],
+      "context_set": ""
+      }
+      ]
+      }
